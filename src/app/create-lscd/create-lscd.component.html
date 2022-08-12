@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="createlcsdForm" (ngSubmit)="onSubmit(createlcsdForm.value)">
+            <div class="form-group row">
+              <div class="col-md-10">
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    District_en: <input type=text name="" class="form-control" id="ADistrict_en"
+                      formControlName="ADistrict_en">
+                  </div>
+                  <div class="col-md-6">
+                    District_cn: <input type=text name="" class="form-control" id="ADistrict_cn"
+                      formControlName="ADistrict_cn">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    Name_en: <input type=text name="" class="form-control" id="AName_en" formControlName="AName_en">
+                  </div>
+                  <div class="col-md-6">
+                    Name_cn: <input type=text name="" class="form-control" id="AName_cn" formControlName="AName_cn">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    Address_en: <input type=text name="" class="form-control" id="AAddress_en"
+                      formControlName="AAddress_en">
+                  </div>
+                  <div class="col-md-6">
+                    Address_cn: <input type=text name="" class="form-control" id="AAddress_cn"
+                      formControlName="AAddress_cn">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    GIHS: <input type=text name="" class="form-control" id="AGIHS" formControlName="AGIHS">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    Court_no_en: <input type=text name="" class="form-control" id="ACourt_no_en"
+                      formControlName="ACourt_no_en">
+                  </div>
+                  <div class="col-md-6">
+                    Court_no_cn: <input type=text name="" class="form-control" id="ACourt_no_cn"
+                      formControlName="ACourt_no_cn">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    Ancillary_facilities_en: <input type=text name="" class="form-control" id="AAncillary_facilities_en"
+                      formControlName="AAncillary_facilities_en">
+                  </div>
+                  <div class="col-md-6">
+                    Ancillary_facilities_cn: <input type=text name="" class="form-control" id="AAncillary_facilities_cn"
+                      formControlName="AAncillary_facilities_cn">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    Opening_hours_en: <input type=text name="" class="form-control" id="AOpening_hours_en"
+                      formControlName="AOpening_hours_en">
+                  </div>
+                  <div class="col-md-6">
+                    Opening_hours_cn: <input type=text name="" class="form-control" id="AOpening_hours_cn"
+                      formControlName="AOpening_hours_cn">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    Phone: <input type=text name="" class="form-control" id="APhone" formControlName="APhone">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    Remarks_en: <input type=text name="" class="form-control" id="ARemarks_en"
+                      formControlName="ARemarks_en">
+                  </div>
+                  <div class="col-md-6">
+                    Remarks_cn: <input type=text name="" class="form-control" id="ARemarks_cn"
+                      formControlName="ARemarks_cn">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    Longitude: <input type=text name="" class="form-control" id="ALongitude"
+                      formControlName="ALongitude">
+                  </div>
+                  <div class="col-md-6">
+                    Latitude: <input type=text name="" class="form-control" id="ALatitude" formControlName="ALatitude">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <ng-container *ngFor="let lcsd of serverDataArr">
+              <tr *ngIf="lcsd.msg === 'Error'">
+                <p style='color:red;'>
+                  Type: {{lcsd.msg}} <br>
+                  Error Code: {{lcsd.Code}} <br>
+                  Error Message: {{lcsd.Message}}
+                </p>
+              </tr>
+            </ng-container>
+
+            <ng-container *ngFor="let lcsd of serverDataArr">
+              <tr *ngIf="lcsd.msg === 'Record successful inserted into database'">
+                <p style='color:green;'>
+                  {{lcsd.msg}}
+                </p>
+              </tr>
+            </ng-container>
+
+            <div class="modal-footer">
+              <button type="submit" class="positive ui button">Submit</button>
+              <button id="close_create_1" class="negative ui button" data-bs-dismiss="modal"
+                (click)="cancelAddButtonHandler()">Cancel</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

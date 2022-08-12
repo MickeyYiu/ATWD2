@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="updatelcsdForm" (ngSubmit)="onSubmit(updatelcsdForm.value)">
+            <div class="form-group row">
+              <div class="col-md-10">
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['District_en'].valid">
+                      <label for="District_en">District_en</label>
+                      <input type=text name="" class="form-control" id="District_en" formControlName="District_en">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['District_cn'].valid">
+                      <label for="District_cn">District_cn</label>
+                      <input type=text name="" class="form-control" id="District_cn" formControlName="District_cn">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Name_en'].valid">
+                      <label for="Name_en">Name_en</label>
+                      <input type=text name="" class="form-control" id="Name_en" formControlName="Name_en">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Name_cn'].valid">
+                      <label for="Name_cn">Name_cn</label>
+                      <input type=text name="" class="form-control" id="Name_cn" formControlName="Name_cn">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Address_en'].valid">
+                      <label for="Address_en">Address_en</label>
+                      <input type=text name="" class="form-control" id="Address_en" formControlName="Address_en">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Address_cn'].valid">
+                      <label for="Address_cn">Address_cn</label>
+                      <input type=text name="" class="form-control" id="Address_cn" formControlName="Address_cn">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['GIHS'].valid">
+                      <label for="GIHS">GIHS</label>
+                      <input type=text name="" class="form-control" id="GIHS" formControlName="GIHS">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Court_no_en'].valid">
+                      <label for="Court_no_en">Court_no_en</label>
+                      <input type=text name="" class="form-control" id="Court_no_en" formControlName="Court_no_en">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Court_no_cn'].valid">
+                      <label for="Court_no_cn">Court_no_cn</label>
+                      <input type=text name="" class="form-control" id="Court_no_cn" formControlName="Court_no_cn">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Ancillary_facilities_en'].valid">
+                      <label for="Ancillary_facilities_en">Ancillary_facilities_en</label>
+                      <input type=text name="" class="form-control" id="Ancillary_facilities_en"
+                        formControlName="Ancillary_facilities_en">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Ancillary_facilities_cn'].valid">
+                      <label for="Ancillary_facilities_cn">Ancillary_facilities_cn</label>
+                      <input type=text name="" class="form-control" id="Ancillary_facilities_cn"
+                        formControlName="Ancillary_facilities_cn">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Opening_hours_en'].valid">
+                      <label for="Opening_hours_en">Opening_hours_en</label>
+                      <input type=text name="" class="form-control" id="Opening_hours_en"
+                        formControlName="Opening_hours_en">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Opening_hours_cn'].valid">
+                      <label for="Opening_hours_cn">Opening_hours_cn</label>
+                      <input type=text name="" class="form-control" id="Opening_hours_cn"
+                        formControlName="Opening_hours_cn">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Phone'].valid">
+                      <label for="Phone">Phone</label>
+                      <input type=text name="" class="form-control" id="Phone" formControlName="Phone">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Remarks_en'].valid">
+                      <label for="Remarks_en">Remarks_en</label>
+                      <input type=text name="" class="form-control" id="Remarks_en" formControlName="Remarks_en">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Remarks_cn'].valid">
+                      <label for="Remarks_cn">Remarks_cn</label>
+                      <input type=text name="" class="form-control" id="Remarks_cn" formControlName="Remarks_cn">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Longitude'].valid">
+                      <label for="Longitude">Longitude</label>
+                      <input type=text name="" class="form-control" id="Longitude" formControlName="Longitude">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="field" [class.error]="!updatelcsdForm.controls['Latitude'].valid">
+                      <label for="Latitude">Latitude</label>
+                      <input type=text name="" class="form-control" id="Latitude" formControlName="Latitude">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ng-container *ngFor="let lcsd of serverDataArr">
+              <tr *ngIf="lcsd.msg === 'Error'">
+                <p style='color:red;'>
+                  Type: {{lcsd.msg}} <br>
+                  Error Code: {{lcsd.Code}} <br>
+                  Error Message: {{lcsd.Message}}
+                </p>
+              </tr>
+            </ng-container>
+            <ng-container *ngFor="let lcsd of serverDataArr">
+              <tr *ngIf="lcsd.msg === 'Record successful update into database'">
+                <p style='color:green;'>
+                  {{lcsd.msg}}
+                </p>
+              </tr>
+            </ng-container>
+            <div class="modal-footer">
+              <button type="submit" class="positive ui button">Submit</button>
+              <button class="negative ui button" data-bs-dismiss="modal" (click)="cancelupdateButtonHandler()" id="close_update"
+                data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

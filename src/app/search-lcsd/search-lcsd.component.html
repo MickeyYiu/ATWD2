@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Advanced Topics in Web Development 2 Coursework</a>
+  </nav>
+  <br>
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card-body">
+        <form [formGroup]="searchlcsdForm" (ngSubmit)="onSubmit(searchlcsdForm.value)">
+          <div class="form-group row">
+            <b>Searching :</b>
+            <select name="" class="form-control" id="inputtype" formControlName="inputtype">
+              <option value="">Choose One</option>
+              <option value="All">All data</option>
+              <option value="District_en">District_en</option>
+              <option value="District_cn">District_cn</option>
+              <option value="Name_en">Name_en</option>
+              <option value="Name_cn">Name_cn</option>
+              <option value="Address_en">Address_en</option>
+              <option value="Address_cn">Address_cn</option>
+              <option value="GIHS">GIHS</option>
+              <option value="Court_no_en">Court_no_en</option>
+              <option value="Court_no_cn">Court_no_cn</option>
+              <option value="Ancillary_facilities_en">Ancillary_facilities_en</option>
+              <option value="Ancillary_facilities_cn">Ancillary_facilities_cn</option>
+              <option value="Opening_hours_en">Opening_hours_en</option>
+              <option value="Opening_hours_cn">Opening_hours_cn</option>
+              <option value="Phone">Phone</option>
+              <option value="Remarks_en">Remarks_en</option>
+              <option value="Remarks_cn">Remarks_cn</option>
+              <option value="Longitude">Longitude</option>
+              <option value="Latitude">Latitude</option>
+            </select>
+          </div>
+          <br>
+          <div class="form-group row">
+            <b>Input the value:</b> <input type=text name="" class="form-control" id="inputvalue"
+              formControlName="inputvalue">
+          </div>
+          <br>
+          <div class="form-group row">
+            <b>Order By:</b>
+            <select name="" class="form-control" id="inputtype1" formControlName="Asc_or_Desc">
+              <option value="">Choose One</option>
+              <option value="ASC">Ascending</option>
+              <option value="DESC">Descending</option>
+            </select>
+          </div>
+          <div class="form-group row">
+            <br>
+            <button type="submit" class="positive ui button">Submit</button>
+          </div>
+        </form>
+        <br>
+        <div class="form-group row">
+          <button (click)="addButtonHandler()" class="ui blue button" data-bs-toggle="modal"
+            data-bs-target="#exampleModal2">
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <table class="ui green table">
+      <tr>
+        <th>District<br>_en</th>
+        <th>District<br>_cn</th>
+        <th>Name<br>_en</th>
+        <th>Name<br>_cn</th>
+        <th>Address<br>_en</th>
+        <th>Address<br>_cn</th>
+        <th>GIHS</th>
+        <th>Court_no<br>_en</th>
+        <th>Court_no<br>_cn</th>
+        <th>Ancillary_<br>facilities_en</th>
+        <th>Ancillary_<br>facilities_cn</th>
+        <th>Opening_<br>hours_en</th>
+        <th>Opening_<br>hours_cn</th>
+        <th>Phone</th>
+        <th>Remarks<br>_en</th>
+        <th>Remarks<br>_cn</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Update Method</th>
+        <th>Delete Method</th>
+      </tr>
+      <tr *ngFor="let lcsd of serverDataArr">
+      <tr *ngFor="let lcsd of serverDataArr">
+        <td>{{lcsd.District_en}}</td>
+        <td>{{lcsd.District_cn}}</td>
+        <td>{{lcsd.Name_en}}</td>
+        <td>{{lcsd.Name_cn}}</td>
+        <td>{{lcsd.Address_en}}</td>
+        <td>{{lcsd.Address_cn}}</td>
+        <td>{{lcsd.GIHS}}</td>
+        <td>{{lcsd.Court_no_en}}</td>
+        <td>{{lcsd.Court_no_cn}}</td>
+        <td>{{lcsd.Ancillary_facilities_en}}</td>
+        <td>{{lcsd.Ancillary_facilities_cn}}</td>
+        <td>{{lcsd.Opening_hours_en}}</td>
+        <td>{{lcsd.Opening_hours_cn}}</td>
+        <td>{{lcsd.Phone}}</td>
+        <td>{{lcsd.Remarks_en}}</td>
+        <td>{{lcsd.Remarks_cn}}</td>
+        <td>{{lcsd.Longitude}}</td>
+        <td>{{lcsd.Latitude}}</td>
+        <td>
+          <button (click)="updateButtonHandler(lcsd.id)" class="ui yellow button" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Update
+          </button>
+        </td>
+        <td>
+          <button (click)="deleteButtonHandler(lcsd.id)" class="negative ui button" data-bs-toggle="modal"
+            data-bs-target="#exampleModal1">
+            Delete
+          </button>
+        </td>
+      </tr>
+
+    </table>
+
+    <ng-container *ngFor="let lcsd of serverDataArr">
+      <tr *ngIf="lcsd.msg === 'Error'">
+        <p style='color:red;'>
+          Type: {{lcsd.msg}} <br>
+          Error Code: {{lcsd.Code}} <br>
+          Error Message: {{lcsd.Message}}
+        </p>
+      </tr>
+    </ng-container>
+  </div>
+
+
+</body>
+
+</html>

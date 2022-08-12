@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="column">
+    <p>
+      <app-search-lcsd (deleteEvent)="deleteEventReceiver($event)" (updateEvent)="updateEventReceiver($event)"
+        (addEvent)="addEventReceiver()"></app-search-lcsd>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <p>
+      <app-create-lscd *ngIf="addEventTriggered" (cancelAddEvent)="cancelAddEventReceiver()"></app-create-lscd>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <p>
+      <app-delete-lscd *ngIf="deleteEventTriggered" (cancelDeleteEvent)="cancelDeleteEventReceiver()"
+        [lcsdRecord]="this.lcsdRecord"></app-delete-lscd>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <p>
+      <app-update-lcsd *ngIf="updateEventTriggered" (cancelUpdateEvent)="cancelUpdateEventReceiver()"
+        [lcsdRecord]="this.lcsdRecord"></app-update-lcsd>
+    </p>
+  </div>
+</div>

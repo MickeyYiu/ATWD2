@@ -1,0 +1,9 @@
+.btn-text-center {
+  text-align: center;
+}
+
+.card-body {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
